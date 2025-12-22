@@ -1,0 +1,117 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+/* Navigation */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #3498db;
+}
+
+/* Main Layout */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Sections */
+section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* About Section */
+#about img {
+  display: block;
+  margin: 10px 0;
+  border-radius: 50%;
+}
+
+/* Skills Section */
+#skills h3 {
+  margin-top: 15px;
+  color: #2c3e50;
+}
+
+#skills ul {
+  margin-left: 20px;
+}
+
+#skills li {
+  margin: 5px 0;
+}
+
+/* Contact Form */
+form {
+  max-width: 400px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #217dbb;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 15px;
+  }
+}
