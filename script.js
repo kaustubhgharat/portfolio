@@ -1,47 +1,9 @@
-// DOM Elements
-const form = document.getElementById("contactForm");
-const messageBox = document.getElementById("formMessage");
-
-// Form Validation
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (name === "") {
-    showError("Name is required");
-    return;
-  }
-
-  if (!email.includes("@")) {
-    showError("Please enter a valid email address");
-    return;
-  }
-
-  if (message.length < 10) {
-    showError("Message must be at least 10 characters");
-    return;
-  }
-
-  showSuccess("Message sent successfully!");
-  form.reset();
-});
-
-// Show error message
-function showError(text) {
-  messageBox.style.color = "red";
-  messageBox.textContent = text;
+// Mobile menu
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
 }
 
-// Show success message
-function showSuccess(text) {
-  messageBox.style.color = "green";
-  messageBox.textContent = text;
-}
-
-// Dark Mode Toggle
+// Dark mode
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
   localStorage.setItem(
@@ -50,7 +12,34 @@ function toggleDarkMode() {
   );
 }
 
-// Load dark mode preference
 if (localStorage.getItem("darkMode") === "true") {
   document.body.classList.add("dark-mode");
+}
+
+// Form validation
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const output = document.getElementById("formMessage");
+
+    if (!email.includes("@")) {
+      output.textContent = "Invalid email address";
+      output.style.color = "red";
+      return;
+    }
+
+    if (message.length < 10) {
+      output.textContent = "Message too short";
+      output.style.color = "red";
+      return;
+    }
+
+    output.textContent = "Message sent successfully!";
+    output.style.color = "green";
+    form.reset();
+  });
 }
