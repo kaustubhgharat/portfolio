@@ -19,6 +19,7 @@ header {
   color: white;
   padding: 20px;
   text-align: center;
+  position: relative;
 }
 
 header h1 {
@@ -114,4 +115,25 @@ footer {
   header {
     padding: 15px;
   }
+}
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: #000;
+}
+
+
+
+.dark-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
